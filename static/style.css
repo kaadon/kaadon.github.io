@@ -322,8 +322,13 @@ a.read-more:hover {
     text-align: center;
 }
 .copyright-text {
-    margin-top: 12px;
+    line-height: 30px;
+    margin-top: 20px;
     text-align: right;
+}
+.copyright-text b{
+    margin-left: 10px;
+    font-size: 20px;
 }
 #tweet ul {
     list-style: outside none none;
@@ -350,4 +355,18 @@ a.read-more:hover {
 }
 .social-icons a:hover, .mainmenu .navbar-nav li:hover a, .newsletter-form input[type=submit], .project-link a.project-detail, .more-link {
     background-color:#8ACA4A
+}
+a:hover{text-decoration:none;}
+.testwait{
+    height: 500px;
+    text-align: center;
+    line-height: 500px;
+    font-size: 35px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    margin-bottom: 20px;
+
+}
+.testwait span {
+    line-height: 30px;
 }
