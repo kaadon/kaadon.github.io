@@ -348,7 +348,8 @@ a.read-more:hover {
 }
 /* Colors CSS */
  a, a.read-more:hover, a.read-more:hover i {
-    color:#8ACA4A
+    color:#8ACA4A;
+     border-radius: 20px;
 }
 .page-title, a.read-more:hover i {
     border-color:#8ACA4A
@@ -358,15 +359,24 @@ a.read-more:hover {
 }
 a:hover{text-decoration:none;}
 .testwait{
+    margin-top: 30px;
     height: 500px;
     text-align: center;
     line-height: 500px;
     font-size: 35px;
     background-color: whitesmoke;
     border-radius: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
 }
 .testwait span {
     line-height: 30px;
+}
+
+.activeNavLink {
+    background-color: #6fb42a;
+    border-radius: 20px;
+}
+.activeFooterLink {
+    color: #333333;
 }
