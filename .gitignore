@@ -13,3 +13,4 @@ yarn-error.log*
 *.sln
 yarn.lock
 /.vuepress/*
+/.github/
