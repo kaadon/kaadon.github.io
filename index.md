@@ -4,22 +4,15 @@ layout: home
 
 hero:
   name: "开发笔记"
-  text: "常用工具技巧, 代码片段, 技巧总结"
-  tagline: "好记性不如烂笔头"
+  text: "<p style='font-size: 1.5rem;'>常用工具技巧, 代码片段, 技巧总结</p>"
+  tagline: " <em style='font-size: 1rem;'>The palest ink is better than the best memory</em> "
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: nginx 笔记
+      link: /docs/CommonToolConfiguration/nginx
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 常用开发工具配置文档
+    details: 包含了常用开发工具配置文档, 配置文件, 脚本, 技巧总结,例如:nginx,php,mysql等
 ---
 
