@@ -5,6 +5,7 @@
     "docs:preview": "vitepress preview"
   },
   "devDependencies": {
+    "@types/node": "^18.19",
     "vitepress": "~1.2.0"
   }
 }

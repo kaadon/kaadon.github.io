@@ -144,23 +144,6 @@
     }
 ```
 
-## nginx日志
-```nginx
-    if ( $proxy_add_x_forwarded_for ~ (\d+)\.(\d+)\.(\d+)\.(\d+),(.*) ){
-      set $real_ip_address $1.$2.$3.$4;
-    }
-    
-    log_format  log_api  '$real_ip_address - $remote_addr - $remote_user [$request_time $upstream_response_time] [$time_local] "$request" '
-                         '$status $body_bytes_sent "$http_referer" '
-                         '"$http_user_agent" "$http_x_forwarded_for"';
-    access_log  logs/access.log  log_api;
-    
-    log_format  api_format    '$remote_addr - $remote_user [$request_time $upstream_response_time] [$time_local] "$request" '
-                              '$status $body_bytes_sent "$http_referer" '
-                              '"$http_user_agent" "$http_x_forwarded_for"';
-    access_log  logs/access.log  main;
-```
-
 ## 负载均衡配置
 1. 配置upstream
 ```nginx
@@ -186,6 +169,23 @@
         proxy_cache_bypass $http_upgrade;
         proxy_pass http://webservers;
     }
+```
+
+## nginx日志
+```nginx
+    if ( $proxy_add_x_forwarded_for ~ (\d+)\.(\d+)\.(\d+)\.(\d+),(.*) ){
+      set $real_ip_address $1.$2.$3.$4;
+    }
+    
+    log_format  log_api  '$real_ip_address - $remote_addr - $remote_user [$request_time $upstream_response_time] [$time_local] "$request" '
+                         '$status $body_bytes_sent "$http_referer" '
+                         '"$http_user_agent" "$http_x_forwarded_for"';
+    access_log  logs/access.log  log_api;
+    
+    log_format  api_format    '$remote_addr - $remote_user [$request_time $upstream_response_time] [$time_local] "$request" '
+                              '$status $body_bytes_sent "$http_referer" '
+                              '"$http_user_agent" "$http_x_forwarded_for"';
+    access_log  logs/access.log  main;
 ```
 
 
