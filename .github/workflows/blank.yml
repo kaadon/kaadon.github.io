@@ -23,7 +23,7 @@ jobs:
           node-version: '21'
       # 生成静态文件
       - name: Build
-        run: pnpm install && vitepress build
+        run: yarn && yarn docs:build
 
       # 部署到 GitHub Pages
       - name: Deploy
