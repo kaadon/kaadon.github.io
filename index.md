@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "CommonDocuments"
+  name: "kaadon的日常开发笔记"
   text: "记录日常使用的文档"
   tagline: My great project tagline
   actions:
