@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "CommonDocuments",
-  description: "记录日常使用的文档",
+  title: "Kaadon's Development Notes",
+  description: "常用工具技巧, 代码片段, 技巧总结|好记信不如烂笔头|Common tools and techniques, code snippets, skill summaries | A good letter is better than a bad pen",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -22,7 +22,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: ' https://github.com/kaadon' }
     ]
   }
 })

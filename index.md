@@ -1,11 +1,11 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
+# https://kaadon.github.io/
 layout: home
 
 hero:
-  name: "kaadon的日常开发笔记"
-  text: "记录日常使用的文档"
-  tagline: My great project tagline
+  name: "开发笔记"
+  text: "常用工具技巧, 代码片段, 技巧总结"
+  tagline: "好记性不如烂笔头"
   actions:
     - theme: brand
       text: Markdown Examples
