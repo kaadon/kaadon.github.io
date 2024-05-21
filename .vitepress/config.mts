@@ -1,6 +1,7 @@
 import {defineConfig} from 'vitepress'
 import * as fs from "node:fs";
 import * as path from "node:path";
+
 function copyDirSync(source, target) {
     // Check if target directory exists, if not, create it
     if (!fs.existsSync(target)) {
@@ -25,6 +26,7 @@ function copyDirSync(source, target) {
         }
     }
 }
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     srcDir: './docs',
@@ -41,12 +43,16 @@ export default defineConfig({
                 text: '常用工具配置',
                 items: [
                     {
-                        text: 'NGINX 配置',
+                        text: 'NGINX常用配置',
                         link: '/CommonToolConfiguration/nginx.md'
                     },
                     {
-                        text: 'PHP 配置',
+                        text: 'PHP常用配置',
                         link: '/CommonToolConfiguration/php.md'
+                    },
+                    {
+                        text: 'MYSQL常用配置',
+                        link: '/CommonToolConfiguration/mysql.md'
                     }
                 ]
             },
@@ -58,20 +64,50 @@ export default defineConfig({
                 text: 'npmJs库',
                 items: []
             },
+            {
+                text: '语言学习',
+                items: [
+                    {
+                        text: 'PYTHON学习路线',
+                        items: [
+                            {
+                                text: 'python学习总览',
+                                link: '/LanguageLearning/python/index.md'
+                            }
+                        ]
+                    }
+                ]
+            },
         ],
         sidebar: {
             "/CommonToolConfiguration/": [
                 {
-                    text: 'NGINX 配置',
+                    text: 'NGINX常用配置',
                     link: '/CommonToolConfiguration/nginx.md'
                 },
                 {
-                    text: 'PHP 配置',
+                    text: 'PHP常用配置',
                     link: '/CommonToolConfiguration/php.md'
+                },
+                {
+                    text: 'MYSQL常用配置',
+                    link: '/CommonToolConfiguration/mysql.md'
                 }
             ],
             "/ComposerLibrary/": [],
-            "/NpmLibrary/": []
+            "/NpmLibrary/": [],
+            "/LanguageLearning/python/": [
+                {
+                    text: 'PYTHON学习路线',
+                    items: [
+                        {
+                            text: 'python学习总览',
+                            link: '/LanguageLearning/python/index.md'
+                        }
+                    ]
+                }
+            ],
+
         },
         socialLinks: [
             {icon: 'github', link: ' https://github.com/kaadon'},
@@ -82,7 +118,7 @@ export default defineConfig({
         },
     },
     lastUpdated: true,
-    buildEnd:  function (app) {
-        copyDirSync(`./${app.assetsDir}`,`${app.outDir}/${app.assetsDir}`)
+    buildEnd: function (app) {
+        copyDirSync(`./${app.assetsDir}`, `${app.outDir}/${app.assetsDir}`)
     }
 })
