@@ -53,6 +53,10 @@ export default defineConfig({
                     {
                         text: 'MYSQL常用配置',
                         link: '/CommonToolConfiguration/mysql.md'
+                    },
+                    {
+                        text: 'NFS常用配置',
+                        link: '/CommonToolConfiguration/nfs.md'
                     }
                 ]
             },
@@ -92,6 +96,10 @@ export default defineConfig({
                 {
                     text: 'MYSQL常用配置',
                     link: '/CommonToolConfiguration/mysql.md'
+                },
+                {
+                    text: 'NFS常用配置',
+                    link: '/CommonToolConfiguration/nfs.md'
                 }
             ],
             "/ComposerLibrary/": [],
