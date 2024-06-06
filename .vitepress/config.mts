@@ -57,6 +57,10 @@ export default defineConfig({
                     {
                         text: 'NFS常用配置',
                         link: '/CommonToolConfiguration/nfs.md'
+                    },
+                    {
+                        text: 'Elasticsearch安装',
+                        link: '/CommonToolConfiguration/elasticsearch.md'
                     }
                 ]
             },
@@ -114,6 +118,10 @@ export default defineConfig({
                 {
                     text: 'NFS常用配置',
                     link: '/CommonToolConfiguration/nfs.md'
+                },
+                {
+                    text: 'Elasticsearch安装',
+                    link: '/CommonToolConfiguration/elasticsearch.md'
                 }
             ],
             "/ComposerLibrary/": [],
