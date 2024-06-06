@@ -19,6 +19,11 @@
     systemctl restart rpcc
 ```
 
+## NFS服务端配置[linux]
+```shell
+[share_path] [IP段]/24(rw,async,insecure,no_subtree_check,all_squash,no_subtree_check,anonuid=1000,anongid=1000).
+```
+
 ## NFS客户端配置[linux]
 ```shell
     echo "[ip]:[remote_path] [local_path] nfs defaults 0 0" >> /etc/fstab

@@ -82,6 +82,20 @@ export default defineConfig({
                     }
                 ]
             },
+            {
+                text: '其他文档',
+                items: [
+                    {
+                        text: 'SSL证书',
+                        items: [
+                            {
+                                text: '自签ssl证书',
+                                link: 'other/ssl/SelfSignedSSL.md'
+                            }
+                        ]
+                    }
+                ]
+            }
         ],
         sidebar: {
             "/CommonToolConfiguration/": [
@@ -115,7 +129,17 @@ export default defineConfig({
                     ]
                 }
             ],
-
+            "/other/ssl": [
+                {
+                    text: 'SSL证书',
+                    items: [
+                        {
+                            text: '自签SSL证书',
+                            link: '/other/ssl/SelfSignedSSL.md'
+                        }
+                    ]
+                }
+            ]
         },
         socialLinks: [
             {icon: 'github', link: ' https://github.com/kaadon'},
