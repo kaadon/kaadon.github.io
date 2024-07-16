@@ -38,7 +38,6 @@ export default defineConfig({
         // https://vitepress.dev/reference/default-theme-config
         nav: [
             {text: '首页', link: '/'},
-            // {text: 'markdown-examples', link: '/markdown-examples.md'},
             {
                 text: '常用工具配置',
                 items: [
@@ -95,6 +94,15 @@ export default defineConfig({
                             {
                                 text: '自签ssl证书',
                                 link: 'other/ssl/SelfSignedSSL.md'
+                            }
+                        ]
+                    },
+                    {
+                        text: 'google配置',
+                        items: [
+                            {
+                                text: '常用链接',
+                                link: 'other/google/google配置.md'
                             }
                         ]
                     }
