@@ -1,0 +1,15 @@
+"elasticsearch.md":
+    text: "Elasticsearch"
+    path: false
+"mysql.md":
+    text: "MySQL"
+    path: false
+"nfs.md":
+    text: "NFS"
+    path: false
+"nginx.md":
+    text: "Nginx"
+    path: false
+"php.md":
+    text: "PHP"
+    path: false

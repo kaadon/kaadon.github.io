@@ -1,7 +1,9 @@
 import {defineConfig} from 'vitepress'
 import * as fs from "node:fs";
 import * as path from "node:path";
-
+import {localssl} from '@kaadon.com/developer/developer';
+import {loadLink} from "../config"
+const {NavData,SidebarData} = loadLink();
 function copyDirSync(source, target) {
     // Check if target directory exists, if not, create it
     if (!fs.existsSync(target)) {
@@ -28,6 +30,7 @@ function copyDirSync(source, target) {
 }
 
 // https://vitepress.dev/reference/site-config
+
 export default defineConfig({
     srcDir: './docs',
     head: [['link', {rel: 'icon', href: '/assets/images/logo.png'}]],
@@ -36,127 +39,9 @@ export default defineConfig({
     themeConfig: {
         logo: '/assets/images/logo.png',
         // https://vitepress.dev/reference/default-theme-config
-        nav: [
-            {text: '首页', link: '/'},
-            {
-                text: '常用工具配置',
-                items: [
-                    {
-                        text: 'NGINX常用配置',
-                        link: '/CommonToolConfiguration/nginx.md'
-                    },
-                    {
-                        text: 'PHP常用配置',
-                        link: '/CommonToolConfiguration/php.md'
-                    },
-                    {
-                        text: 'MYSQL常用配置',
-                        link: '/CommonToolConfiguration/mysql.md'
-                    },
-                    {
-                        text: 'NFS常用配置',
-                        link: '/CommonToolConfiguration/nfs.md'
-                    },
-                    {
-                        text: 'Elasticsearch安装',
-                        link: '/CommonToolConfiguration/elasticsearch.md'
-                    }
-                ]
-            },
-            {
-                text: 'composer库',
-                items: []
-            },
-            {
-                text: 'npmJs库',
-                items: []
-            },
-            {
-                text: '语言学习',
-                items: [
-                    {
-                        text: 'PYTHON学习路线',
-                        items: [
-                            {
-                                text: 'python学习总览',
-                                link: '/LanguageLearning/python/index.md'
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                text: '其他文档',
-                items: [
-                    {
-                        text: 'SSL证书',
-                        items: [
-                            {
-                                text: '自签ssl证书',
-                                link: 'other/ssl/SelfSignedSSL.md'
-                            }
-                        ]
-                    },
-                    {
-                        text: 'google配置',
-                        items: [
-                            {
-                                text: '常用链接',
-                                link: 'other/google/google配置.md'
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
-        sidebar: {
-            "/CommonToolConfiguration/": [
-                {
-                    text: 'NGINX常用配置',
-                    link: '/CommonToolConfiguration/nginx.md'
-                },
-                {
-                    text: 'PHP常用配置',
-                    link: '/CommonToolConfiguration/php.md'
-                },
-                {
-                    text: 'MYSQL常用配置',
-                    link: '/CommonToolConfiguration/mysql.md'
-                },
-                {
-                    text: 'NFS常用配置',
-                    link: '/CommonToolConfiguration/nfs.md'
-                },
-                {
-                    text: 'Elasticsearch安装',
-                    link: '/CommonToolConfiguration/elasticsearch.md'
-                }
-            ],
-            "/ComposerLibrary/": [],
-            "/NpmLibrary/": [],
-            "/LanguageLearning/python/": [
-                {
-                    text: 'PYTHON学习路线',
-                    items: [
-                        {
-                            text: 'python学习总览',
-                            link: '/LanguageLearning/python/index.md'
-                        }
-                    ]
-                }
-            ],
-            "/other/ssl": [
-                {
-                    text: 'SSL证书',
-                    items: [
-                        {
-                            text: '自签SSL证书',
-                            link: '/other/ssl/SelfSignedSSL.md'
-                        }
-                    ]
-                }
-            ]
-        },
+        nav: NavData,
+        // @ts-ignore
+        sidebar: SidebarData,
         socialLinks: [
             {icon: 'github', link: ' https://github.com/kaadon'},
         ],
@@ -168,5 +53,10 @@ export default defineConfig({
     lastUpdated: true,
     buildEnd: function (app) {
         copyDirSync(`./${app.assetsDir}`, `${app.outDir}/${app.assetsDir}`)
+    },
+    vite: {
+        server: {
+            https: localssl
+        }
     }
 })

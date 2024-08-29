@@ -6,6 +6,10 @@
   },
   "devDependencies": {
     "@types/node": "^18.19",
-    "vitepress": "~1.2.0"
+    "vitepress": "~1.2.0",
+    "js-yaml": "^4.1.0"
+  },
+  "dependencies": {
+    "@kaadon.com/developer": "^0.0.1"
   }
 }

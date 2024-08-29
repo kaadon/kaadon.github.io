@@ -1,0 +1,12 @@
+cdn:
+    text: "CDN"
+    path: true
+frame:
+    text: "Frame"
+    path: true
+google:
+    text: "Google"
+    path: true
+ssl:
+    text: "SSL"
+    path: true
