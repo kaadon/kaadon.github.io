@@ -1,15 +1,15 @@
-"elasticsearch.md":
-    text: "Elasticsearch"
-    path: false
-"mysql.md":
-    text: "MySQL"
-    path: false
-"nfs.md":
-    text: "NFS"
-    path: false
-"nginx.md":
-    text: "Nginx"
-    path: false
-"php.md":
-    text: "PHP"
-    path: false
+"elasticsearch":
+    text: "elasticsearch常用配置"
+    path: true
+"mysql":
+    text: "mysql常用配置"
+    path: true
+"nfs":
+    text: "nfs常用配置"
+    path: true
+"nginx":
+    text: "nginx常用配置"
+    path: true
+"php":
+    text: "php常用配置"
+    path: true
