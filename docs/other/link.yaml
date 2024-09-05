@@ -10,3 +10,6 @@ google:
 ssl:
     text: "SSL"
     path: true
+linux:
+    text: "Linux常用配置"
+    path: true
