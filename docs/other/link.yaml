@@ -13,3 +13,6 @@ ssl:
 linux:
     text: "Linux常用配置"
     path: true
+tools:
+    text: "常用工具"
+    path: true
