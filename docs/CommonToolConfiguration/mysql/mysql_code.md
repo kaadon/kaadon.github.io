@@ -1,0 +1,18 @@
+# <center>MySQL CODE</center>
+
+## 1. 修改默认值
+```mysql
+SELECT CONCAT('ALTER TABLE `', TABLE_NAME, '` MODIFY `', COLUMN_NAME, '` ','decimal(20,4) UNSIGNED NOT NULL DEFAULT 0 COMMENT "',COLUMN_COMMENT,'";') AS sql_statement
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_SCHEMA = 'brushing10'
+AND DATA_TYPE = 'decimal';
+```
+
+## 2. 修改字段值
+```mysql
+SELECT CONCAT('UPDATE `',TABLE_NAME,'` SET `',COLUMN_NAME,'` = 0 WHERE `',COLUMN_NAME,'` IS NULL;') AS sql_statement
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_SCHEMA = 'brushing10'
+AND DATA_TYPE = 'decimal';
+```
+
