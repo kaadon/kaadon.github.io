@@ -16,3 +16,6 @@ linux:
 tools:
     text: "常用工具"
     path: true
+mac:
+    text: "mac常用配置"
+    path: true
