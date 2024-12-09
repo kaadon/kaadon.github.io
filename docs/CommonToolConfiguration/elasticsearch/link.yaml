@@ -1,7 +1,4 @@
-"elasticsearch-centos7.6.md":
-    text: "centos7.6-Elasticsearch7.X"
+"elasticsearch.7x.md":
+    text: "Elasticsearch7.X"
     path: false
 
-"elasticsearch-unbut22.04.md":
-text: "centos7.6-Elasticsearch7.X"
-path: false
