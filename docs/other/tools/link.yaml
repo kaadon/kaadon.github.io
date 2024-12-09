@@ -1,3 +1,6 @@
 "create-dmg.md":
     text: "打包DMG:create-dmg"
     path: false
+"webclip.md":
+    text: "制作IOS书签免签名"
+    path: false
