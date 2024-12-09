@@ -1,4 +1,4 @@
-# <center>Elasticsearch安装</center>
+# <center>CENTOS7.6 Elasticsearch安装</center>
 
 ## 一、 Elasticsearch 7.x 安装
 
