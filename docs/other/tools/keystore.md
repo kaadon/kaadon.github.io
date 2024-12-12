@@ -3,5 +3,5 @@
 
 ## 1. 生成证书
 ```shell
-keytool -genkey -v -keystore shelltv-net.keystore -keyalg RSA -keysize 4096 -validity 10000 -alias shelltv-net
+keytool -genkey -v -keystore shelltv.keystore -keyalg RSA -keysize 4096 -validity 10000 -alias shelltv
 ```
