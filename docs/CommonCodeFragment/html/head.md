@@ -1,59 +1,61 @@
 # <center>HEAD:标签示例</center>
 
 ## 一.og标签的所有示例
-```html
-<head>
-  <!-- Open Graph 协议 -->
-  <meta property="og:title" content="网页标题">
-  <meta property="og:type" content="website"> <!-- 内容类型 (article, website, video, music, etc.) -->
-  <meta property="og:image" content="图片的URL">
-  <meta property="og:image:secure_url" content="图片的安全URL（https）">
-  <meta property="og:image:type" content="image/jpeg"> <!-- 图片的MIME类型 -->
-  <meta property="og:image:width" content="1200"> <!-- 图片宽度 -->
-  <meta property="og:image:height" content="630"> <!-- 图片高度 -->
-  <meta property="og:description" content="网页描述">
-  <meta property="og:url" content="网页链接">
-  <meta property="og:site_name" content="网站名称">
-  <meta property="og:locale" content="en_US"> <!-- 网站语言 -->
-  <meta property="og:locale:alternate" content="zh_CN"> <!-- 可选的备用语言 -->
-  
-  <!-- 对于视频内容 -->
-  <meta property="og:video" content="视频的URL">
-  <meta property="og:video:secure_url" content="视频的安全URL（https）">
-  <meta property="og:video:type" content="video/mp4"> <!-- 视频的MIME类型 -->
-  <meta property="og:video:width" content="1280">
-  <meta property="og:video:height" content="720">
-
-  <!-- 音乐内容 -->
-  <meta property="og:audio" content="音频文件的URL">
-  <meta property="og:audio:secure_url" content="音频文件的安全URL">
-  <meta property="og:audio:type" content="audio/mp3">
-
-  <!-- 文章相关 -->
-  <meta property="og:article:published_time" content="2023-10-01T08:00:00+00:00">
-  <meta property="og:article:modified_time" content="2023-10-10T12:00:00+00:00">
-  <meta property="og:article:author" content="作者的名称或URL">
-  <meta property="og:article:section" content="文章所属的部分或栏目">
-  <meta property="og:article:tag" content="标签1">
-  <meta property="og:article:tag" content="标签2">
-  
-  <!-- 多个图片 (可选) -->
-  <meta property="og:image" content="图片URL1">
-  <meta property="og:image" content="图片URL2">
-</head>
+```xhtml
+    <head>
+      <!-- Open Graph 协议 -->
+      <meta property="og:title" content="网页标题">
+      <meta property="og:type" content="website"> <!-- 内容类型 (article, website, video, music, etc.) -->
+      <meta property="og:image" content="图片的URL">
+      <meta property="og:image:secure_url" content="图片的安全URL（https）">
+      <meta property="og:image:type" content="image/jpeg"> <!-- 图片的MIME类型 -->
+      <meta property="og:image:width" content="1200"> <!-- 图片宽度 -->
+      <meta property="og:image:height" content="630"> <!-- 图片高度 -->
+      <meta property="og:description" content="网页描述">
+      <meta property="og:url" content="网页链接">
+      <meta property="og:site_name" content="网站名称">
+      <meta property="og:locale" content="en_US"> <!-- 网站语言 -->
+      <meta property="og:locale:alternate" content="zh_CN"> <!-- 可选的备用语言 -->
+      
+      <!-- 对于视频内容 -->
+      <meta property="og:video" content="视频的URL">
+      <meta property="og:video:secure_url" content="视频的安全URL（https）">
+      <meta property="og:video:type" content="video/mp4"> <!-- 视频的MIME类型 -->
+      <meta property="og:video:width" content="1280">
+      <meta property="og:video:height" content="720">
+    
+      <!-- 音乐内容 -->
+      <meta property="og:audio" content="音频文件的URL">
+      <meta property="og:audio:secure_url" content="音频文件的安全URL">
+      <meta property="og:audio:type" content="audio/mp3">
+    
+      <!-- 文章相关 -->
+      <meta property="og:article:published_time" content="2023-10-01T08:00:00+00:00">
+      <meta property="og:article:modified_time" content="2023-10-10T12:00:00+00:00">
+      <meta property="og:article:author" content="作者的名称或URL">
+      <meta property="og:article:section" content="文章所属的部分或栏目">
+      <meta property="og:article:tag" content="标签1">
+      <meta property="og:article:tag" content="标签2">
+      
+      <!-- 多个图片 (可选) -->
+      <meta property="og:image" content="图片URL1">
+      <meta property="og:image" content="图片URL2">
+    </head>
 ```
 ## 二. 社交媒体平台<head> 标签示例
 ### 1. QQ
-```html
-<!--支持OG标签-->
-<!-- QQ自定义标签（可选）-->
-<meta name="qq:card" content="summary_large_image"> <!-- QQ的卡片类型 -->
-<meta name="qq:title" content="网页标题"> <!-- 标题 -->
-<meta name="qq:description" content="网页描述"> <!-- 描述 -->
-<meta name="qq:image" content="图片的URL"> <!-- 图片 -->
+
+```text
+    <head>
+        <meta name="qq:card" content="summary_large_image">
+        <meta name="qq:title" content="网页标题">
+        <meta name="qq:description" content="网页描述">
+        <meta name="qq:image" content="图片的URL"> 
+    </head>
 ```
+
 ### 2. 微博
-```html
+```text
 <!--支持OG标签-->
 <!-- 微博自定义的标签（可选）-->
 <meta name="weibo:card" content="summary_large_image"> <!-- 微博的卡片类型 -->
@@ -62,7 +64,7 @@
 <meta name="weibo:image" content="图片的URL"> <!-- 图片 -->
 ```
 ### 3. Twitter
-```html
+```text
 <!-- 基本的 Twitter Card -->
 <meta name="twitter:card" content="summary"> <!-- 或 summary_large_image -->
 <meta name="twitter:title" content="网页标题">
@@ -121,7 +123,7 @@
 <meta name="twitter:url" content="网页链接">
 ```
 ### 4. LinkedIn
-```html
+```text
 <meta property="og:title" content="网页标题">
 <meta property="og:description" content="网页描述">
 <meta property="og:image" content="图片的URL">
@@ -130,7 +132,7 @@
 <meta property="og:site_name" content="网站名称">
 ```
 ### 5. Pinterest
-```html
+```text
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pinterest分享标题">
 <meta property="og:description" content="Pinterest分享描述">
@@ -139,7 +141,7 @@
 <meta name="pinterest" content="nopin" /> <!-- 防止内容被Pin -->
 ```
 ### 6. Google 搜索 (Structured Data)
-```html
+```text
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -164,7 +166,7 @@
   </script>
 ```
 ### 7. 微信
-```html
+```text
 <head>
 <!--支持OG标签-->
 <!-- 微信分享的自定义标签 -->
@@ -203,7 +205,6 @@
 <meta name="wechat:mini_program" content="miniProgramID"> <!-- 微信小程序的ID -->
 <meta name="wechat:mini_program:page" content="小程序页面路径"> <!-- 小程序页面路径 -->
 </head>
-
 ```
 
 
