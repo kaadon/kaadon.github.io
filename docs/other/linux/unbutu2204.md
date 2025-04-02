@@ -26,3 +26,8 @@ sudo ufw delete allow from [ip]
 sudo ufw delete allow from [ip]/[mask]
 ```
 
+## 2. 安装gmp
+```shell
+sudo apt-get install libgmp-dev
+```
+

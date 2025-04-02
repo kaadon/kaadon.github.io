@@ -10,6 +10,9 @@
 "nginx":
     text: "nginx常用配置"
     path: true
+"node":
+    text: "node常用配置"
+    path: true
 "php":
     text: "php常用配置"
     path: true
