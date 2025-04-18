@@ -24,13 +24,13 @@ ComposerLibrary:
 LanguageLearning:
     text: "语言学习"
     path: true
-NpmLibrary:
-    text: "NPM库"
-    path: true
 other:
     text: "其他工具"
     path: true
 tools:
     text: "开发工具"
+    path: true
+NpmLibrary:
+    text: "NPM库"
     path: true
 
