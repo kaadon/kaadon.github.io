@@ -13,6 +13,9 @@
 "php":
     text: "php常用配置"
     path: true
+"git":
+    text: "git常用配置"
+    path: true
 "shell":
     text: "shell代码段"
     path: true
