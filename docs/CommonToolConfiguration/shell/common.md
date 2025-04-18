@@ -12,3 +12,11 @@
     #!/bin/env bash
     nohup sshpass -p "密码" rsync -avzP /www/backup/database/mysql/* [user]@[ip]:/www/backup/database/mysql > /www/rsync.log 2>&1 &
 ```
+
+## shell输出
+```shell
+# 输出当前目录下以及子目录中的所有php文件
+find . -type f -name "*.php"
+#输出当前目录下的文件夹 以 *|* 输出
+printf "%s" "$(find . -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | paste -sd "|")"
+```
