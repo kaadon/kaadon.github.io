@@ -21,10 +21,12 @@ fi
 ```
 
 - 添加秘钥到 GitHub/GitLab/Gitee/Gitea
-> 将公钥添加到仓库配置中的(部署秘钥/Deploy keys),一般如果是公共服务器不要给与写权限,只读即可
 ```shell
+# 查看公钥
 cat ~/.ssh/id_rsa.pub
 ```
+> 将公钥添加到仓库配置中的(部署秘钥/Deploy keys),一般如果是公共服务器不要给与写权限,只读即可
+
 
 - git 远程必须使用 ssh 的形式
 ```text
