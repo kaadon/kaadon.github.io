@@ -8,7 +8,8 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
 - 添加秘钥: 将一下代码添加到 `~/.bashrc` 文件中
 ```text
-# 启动 ssh-agent 并设置环境变量
+# 设置 ssh-agent 代理
+# 添加环境变量
 if [ -z "$SSH_AUTH_SOCK" ] || ! ps -p "$SSH_AGENT_PID" > /dev/null 2>&1; then
     eval "$(ssh-agent -s)"
 fi
@@ -17,7 +18,14 @@ SSH_KEY="$HOME/.ssh/id_rsa"
 if [ -f "$SSH_KEY" ]; then
     ssh-add -l 2>/dev/null | grep "$(ssh-keygen -lf $SSH_KEY | awk '{print $2}')" > /dev/null || ssh-add "$SSH_KEY"
 fi
+# 设置 ssh-agent 代理完成
+# 添加环境变量完成
 
+```
+
+- 使配置生效
+```shell
+source ~/.bashrc
 ```
 
 - 添加秘钥到 GitHub/GitLab/Gitee/Gitea
@@ -29,11 +37,19 @@ cat ~/.ssh/id_rsa.pub
 
 
 - git 远程必须使用 ssh 的形式
-```text
-# 以gitea 为例
-git@git.boolcdn.net:8022/[组织/用户]/[仓库名].git
-# 以github 为例
-git@github.com/[组织/用户]/[仓库名].git
+- 以gitee 为例
+```shell
+# 克隆
+git clone ssh://git@git.boolcdn.net:8022/[组织/用户]/[仓库名].git
+# 添加远程
+git remote add origin  
+```
+- 以github 为例
+```shell
+# 克隆
+git clone git@github.com/[组织/用户]/[仓库名].git
+# 添加远程
+git remote add origin  git@github.com/[组织/用户]/[仓库名].git
 ```
 
 
