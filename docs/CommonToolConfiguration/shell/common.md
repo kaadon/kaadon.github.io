@@ -13,7 +13,7 @@
     nohup sshpass -p "密码" rsync -avzP /www/backup/database/mysql/* [user]@[ip]:/www/backup/database/mysql > /www/rsync.log 2>&1 &
 ```
 
-## shell输出
+## 3. shell输出
 ```shell
 # 输出当前目录下以及子目录中的所有php文件
 find . -type f -name "*.php"
