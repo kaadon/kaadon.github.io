@@ -17,6 +17,9 @@
 ```shell
 # 输出当前目录下以及子目录中的所有php文件
 find . -type f -name "*.php"
+```
+
+```shell
 #输出当前目录下的文件夹 以 *|* 输出
 printf "%s" "$(find . -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | paste -sd "|")"
 ```
