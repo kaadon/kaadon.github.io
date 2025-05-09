@@ -23,3 +23,8 @@ find . -type f -name "*.php"
 #输出当前目录下的文件夹 以 *|* 输出
 printf "%s" "$(find . -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | paste -sd "|")"
 ```
+
+```shell
+#输出当前目录下的文件夹 以nginx禁止访问php
+printf '\n#必须放在解析PHP之前\n#禁止目录执行php SATRT\nlocation ~* ^/(%s)/.*\\.(php|php5|php7|php8)$ {\n  default_type application/json;\n  return 200 '\''{"message":"You are definitely a particularly bad big fool."}'\'';\n}\n#禁止目录执行php END\n\n' "$(find . -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | paste -sd "|")"
+```
