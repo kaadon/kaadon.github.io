@@ -19,3 +19,6 @@ tools:
 mac:
     text: "mac常用配置"
     path: true
+virus:
+    text: "病毒记录"
+    path: true
