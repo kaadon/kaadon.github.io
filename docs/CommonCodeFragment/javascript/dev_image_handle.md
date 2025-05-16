@@ -65,4 +65,27 @@ async function scanDirectory(directoryPath) {
 })();
 
 ```
+## 2. 本地:图片处理为webp
+### 1. 安装
+```shell
+# unbutu 
+  sudo apt-get install webp
+```
+```shell
+# mac
+  brew install webp
+```
+```shell
+# centos
+  yum install libwebp-tools
+```
+### 2. 转换
+```shell
+### 1. 转换
+```shell
 
+find . -type f \( -iname "*.jpg" -o -iname "*.png" \) | while read -r file; do
+  out="${file%.*}.webp"
+  cwebp -q 80 "$file" -o "$out"
+done
+```
