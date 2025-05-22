@@ -86,3 +86,13 @@ find . -type f \( -iname "*.jpg" -o -iname "*.png" \) | while read -r file; do
   cwebp -q 80 "$file" -o "$out"
 done
 ```
+
+## 3. 本地:图片大小
+
+### 1. mac自带sips
+```shell
+mkdir path
+bash -c 'for file in *.{jpg,jpeg,png}; do [ -f "$file" ] && sips -s format png -Z 58 "$file" --out "path/${file%.*}.png"; done'
+```
+
+
