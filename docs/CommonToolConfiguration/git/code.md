@@ -14,7 +14,6 @@ ssh-keygen -t ed25519 -f my_ed25519_key -C "your_email@example.com"
 - 添加秘钥: 将一下代码添加到 `~/.bashrc` 文件中
 > 添加一个 ssh-agent 代理
 ```bash
-```text
 # 设置 ssh-agent 代理
 # 添加环境变量
 if [ -z "$SSH_AUTH_SOCK" ] || ! ps -p "$SSH_AGENT_PID" > /dev/null 2>&1; then
