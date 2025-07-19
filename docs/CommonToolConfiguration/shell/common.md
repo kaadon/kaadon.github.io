@@ -28,3 +28,4 @@ printf "%s" "$(find . -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | pas
 printf '\n    #必须放在解析PHP之前\n    #禁止目录执行php SATRT\n    location ~* ^/(%s)/.*\\.(php|php5|php7|php8)$ {\n        default_type application/json;\n        return 200 '\''{"message":"You are definitely a particularly bad big fool."}'\'';\n    }\n    #禁止目录执行php END\n\n' "$(find . -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | paste -sd "|")"
 ```
 
+
