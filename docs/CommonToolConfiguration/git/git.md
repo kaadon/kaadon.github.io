@@ -30,4 +30,5 @@ zip -r "$OUTPUT_DIR_ZIP.zip" "$OUTPUT_DIR"
 echo "✅ 正在打包输出目录为 $OUTPUT_DIR_ZIP.zip"
 # 删除输出目录
 rm -rf "$OUTPUT_DIR"
+
 ```
