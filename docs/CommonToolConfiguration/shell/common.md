@@ -14,18 +14,18 @@
 ```
 
 ## 3. shell输出
+### 3.1 输出当前目录下的文件 以 *|* 输出
 ```shell
-# 输出当前目录下以及子目录中的所有php文件
 find . -type f -name "*.php"
 ```
-
+### 3.2 输出当前目录下的文件夹 以 *|* 输出
 ```shell
-#输出当前目录下的文件夹 以 *|* 输出
+
 printf "%s" "$(find . -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | paste -sd "|")"
 ```
-
+### 3.3 输出当前目录下的文件夹 以nginx禁止访问php
 ```shell
-#输出当前目录下的文件夹 以nginx禁止访问php
-printf '\n#必须放在解析PHP之前\n#禁止目录执行php SATRT\nlocation ~* ^/(%s)/.*\\.(php|php5|php7|php8)$ {\n  default_type application/json;\n  return 200 '\''{"message":"You are definitely a particularly bad big fool."}'\'';\n}\n#禁止目录执行php END\n\n' "$(find . -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | paste -sd "|")"
+printf '\n    #必须放在解析PHP之前\n    #禁止目录执行php SATRT\n    location ~* ^/(%s)/.*\\.(php|php5|php7|php8)$ {\n        default_type application/json;\n        return 200 '\''{"message":"You are definitely a particularly bad big fool."}'\'';\n    }\n    #禁止目录执行php END\n\n' "$(find . -mindepth 1 -maxdepth 1 -type d -exec basename {} \; | paste -sd "|")"
 ```
+
 
