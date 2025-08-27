@@ -1,7 +1,7 @@
 import {defineConfig} from 'vitepress'
 import * as fs from "node:fs";
 import * as path from "node:path";
-import {localssl} from '@kaadon.com/developer/developer';
+import {local_ssl} from '@kaadon.com/developer';
 import {loadLink} from "../config"
 const {NavData,SidebarData} = loadLink();
 function copyDirSync(source, target) {
@@ -56,7 +56,7 @@ export default defineConfig({
     },
     vite: {
         server: {
-            https: localssl
+            https: local_ssl
         }
     }
 })

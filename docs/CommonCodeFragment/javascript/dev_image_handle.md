@@ -85,6 +85,24 @@ find . -type f \( -iname "*.jpg" -o -iname "*.png" \) | while read -r file; do
   out="${file%.*}.webp"
   cwebp -q 80 "$file" -o "$out"
 done
+
+#压缩后改回原来的文件名
+
+find . -type f \( -iname "*.jpg" -o -iname "*.png" \) | while read -r file; do
+  ext="${file##*.}"                      # 原始扩展名
+  ext_lower=$(echo "$ext" | tr 'A-Z' 'a-z')
+
+  if [ "$ext_lower" = "jpg" ] || [ "$ext_lower" = "jpeg" ]; then
+    out="${file%.*}.jpg"
+  elif [ "$ext_lower" = "png" ]; then
+    out="${file%.*}.png"
+  else
+    continue
+  fi
+
+  cwebp -q 80 "$file" -o "$out"
+done
+
 ```
 
 ## 3. 本地:图片大小
