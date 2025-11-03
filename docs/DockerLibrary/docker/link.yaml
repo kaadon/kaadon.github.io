@@ -1,20 +1,20 @@
 "gitea.md":
-    text: "gitea"
+    text: "gitea 部署"
     path: false
 "coturn.md":
-    text: "gitea"
+    text: "coturn 部署"
     path: false
 "elasticsearch.md":
-    text: "gitea"
+    text: "elasticsearch 部署"
     path: false
 "mysql.md":
-    text: "gitea"
+    text: "mysql 部署"
     path: false
 "registry.md":
-    text: "gitea"
+    text: "docker server部署"
     path: false
 "clickhouse.md":
-    text: "gitea"
+    text: "clickhouse 部署"
     path: false
 
 
