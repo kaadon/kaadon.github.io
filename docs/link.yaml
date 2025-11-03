@@ -33,4 +33,7 @@ tools:
 NpmLibrary:
     text: "NPM库"
     path: true
+DockerLibrary:
+    text: "常用Docker部署"
+    path: true
 

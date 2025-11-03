@@ -1,0 +1,20 @@
+"gitea.md":
+    text: "gitea"
+    path: false
+"coturn.md":
+    text: "gitea"
+    path: false
+"elasticsearch.md":
+    text: "gitea"
+    path: false
+"mysql.md":
+    text: "gitea"
+    path: false
+"registry.md":
+    text: "gitea"
+    path: false
+"clickhouse.md":
+    text: "gitea"
+    path: false
+
+
