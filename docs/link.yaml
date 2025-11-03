@@ -9,6 +9,9 @@
     text: "api-examples"
     path: false
     isShow: false
+Developer:
+    text: "常用开发笔记"
+    path: true
 CommonCodeFragment:
     text: "常用代码片段"
     path: true
