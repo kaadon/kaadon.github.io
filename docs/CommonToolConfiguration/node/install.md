@@ -3,20 +3,88 @@
 ## 1. nvm安装
 
 ```bash
-# Download and install nvm:
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
-# in lieu of restarting the shell
-\. "$HOME/.nvm/nvm.sh"
-# Download and install Node.js:
-nvm install 20
+# 下载并安装 nvm：
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
+# 代替重启 shell
+\. "$HOME/.nvm/nvm.sh"
+
+# 下载并安装 Node 16：
 nvm install 16
 
+# 下载并安装 Yarn:
+corepack enable yarn
+
+# 验证 Yarn 版本：
+yarn -v
+
+# 下载并安装 pnpm:
+corepack enable pnpm
+
+# 验证 pnpm 版本：
+pnpm -v
+
+# 下载并安装 Node 18：
 nvm install 18
 
-nvm alias default 20
-# Verify the Node.js version:
-node -v # Should print "v22.14.0".
+# 下载并安装 Yarn:
+corepack enable yarn
+
+# 验证 Yarn 版本：
+yarn -v
+
+# 下载并安装 pnpm:
+corepack enable pnpm
+
+# 验证 pnpm 版本：
+pnpm -v
+
+# 下载并安装 Node 20：
+nvm install 20
+
+# 下载并安装 Yarn:
+corepack enable yarn
+
+# 验证 Yarn 版本：
+yarn -v
+
+# 下载并安装 pnpm:
+corepack enable pnpm
+
+# 验证 pnpm 版本：
+pnpm -v
+
+# 下载并安装 Node 22：
+nvm install 22
+
+# 下载并安装 Yarn:
+corepack enable yarn
+
+# 验证 Yarn 版本：
+yarn -v
+
+# 下载并安装 pnpm:
+corepack enable pnpm
+
+# 验证 pnpm 版本：
+pnpm -v
+
+# 下载并安装 Node 24：
+nvm install 24
+
+# 下载并安装 Yarn:
+corepack enable yarn
+
+# 验证 Yarn 版本：
+yarn -v
+
+# 下载并安装 pnpm:
+corepack enable pnpm
+
+# 验证 pnpm 版本：
+pnpm -v
+
+nvm alias default 18
 ```
 
 ## 2. 配置nvm环境变量
