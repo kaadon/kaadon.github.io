@@ -33,7 +33,13 @@ services:
     networks:
       - docker
     restart: always
-
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 8gb
+    cpus: "4.0"
+    mem_limit: 8gb
 networks:
   docker:
     external: true

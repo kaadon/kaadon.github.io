@@ -26,7 +26,13 @@ services:
     networks:
       docker:
         ipv4_address: 10.0.0.3
-
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 8gb
+    cpus: "4.0"
+    mem_limit: 8gb
 networks:
   docker:
     external: true

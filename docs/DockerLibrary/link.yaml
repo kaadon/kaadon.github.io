@@ -1,3 +1,6 @@
-docker:
-    text: docker.io
+build:
+    text: build
+    path: true
+compose:
+    text: compose
     path: true

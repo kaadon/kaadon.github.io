@@ -20,7 +20,13 @@ services:
     restart: always
     networks:
       - gitea-net
-
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 8gb
+    cpus: "4.0"
+    mem_limit: 8gb
 networks:
   gitea-net:
     driver: bridge

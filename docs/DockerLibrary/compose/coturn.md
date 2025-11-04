@@ -24,5 +24,12 @@ services:
       - "--no-dtls"
     volumes:
       - /etc/localtime:/etc/localtime:ro
+    deploy:
+      resources:
+        limits:
+          cpus: "4.0"
+          memory: 8gb
+    cpus: "4.0"
+    mem_limit: 8gb
 ```
 
