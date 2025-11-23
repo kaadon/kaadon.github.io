@@ -12,3 +12,9 @@
       nvm use --silent --use-on-cd 
     fi
 ```
+
+## 2. 错误处理
+
+### 2.1 出现 ERR_OSSL_EVP_UNSUPPORTED
+在使用 Node.js 17 及以上版本时，可能会遇到 `ERR_OSSL_EVP_UNSUPPORTED` 错误。解决方法是在启动 Node.js 应用时添加环境变量 `NODE_OPTIONS=--openssl-legacy-provider`。
+
