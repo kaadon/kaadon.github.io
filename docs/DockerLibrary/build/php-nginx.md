@@ -48,46 +48,8 @@ export PHP_DATE_TIMEZONE=${SERVER_DATE_TIMEZONE:-Asia/Shanghai}
 
 date
 
-# 根据环境变量生成 .env 文件
-cat > /app/.env <<EOF
-[APP]
-DEBUG=${APP_DEBUG:-false}
-TIMEZONE=${SERVER_DATE_TIMEZONE:-Asia/Shanghai}
-
-[DATABASE]
-DEBUG=${DATABASE_DEBUG:-false}
-TYPE=${DATABASE_TYPE:-mysql}
-HOSTNAME=${DATABASE_HOSTNAME:-10.0.0.1}
-DATABASE=${DATABASE_DATABASE:-authapi}
-USERNAME=${DATABASE_USERNAME:-authapi}
-PASSWORD=${DATABASE_PASSWORD:-authapi}
-CHARSET=${DATABASE_CHARSET:-utf8mb4}
-HOSTPORT=${DATABASE_HOSTPORT:-3306}
-PREFIX=${DATABASE_PREFIX:-ka_}
-
-[REDIS]
-HOSTNAME=${REDIS_HOSTNAME:-10.0.0.1}
-PASSWORD=${REDIS_PASSWORD:-123456}
-SELECT=${REDIS_SELECT:-0}
-PORT=${REDIS_PORT:-6379}
-PREFIX=${REDIS_PREFIX:-tpAuthapi:}
-TAGPREFIX=${REDIS_TAGPREFIX:-tpAuthapiTag:}
-
-[KAADON]
-TRANSLATE_KEY=${KAADON_TRANSLATE_KEY:-AIzaSyAPMBFS_xQ79RzMICQBfRCKbAPjPggvSx0}
-GMAIL_USERNAME=${KAADON_GMAIL_USERNAME:-authapi.vip@gmail.com}
-GMAIL_PASSWORD=${KAADON_GMAIL_PASSWORD:-pxtihxjdhqglkgfd}
-
-[LANG]
-DEFAULT_LANG=${LANG_DEFAULT_LANG:-zh-cn}
-
-[FRONT]
-PROJECT_NAME=${FRONT_PROJECT_NAME:-tpAuthapi}
-
-EOF
-
-echo "Generated .env file:"
-cat /app/.env
+# 根据环境变量生成 .env 文件 （可选）
+# 直接挂载最佳
 
 # 设置运行时目录权限（适用于 volumes 挂载场景）
 echo "Setting up directory permissions..."
@@ -118,58 +80,79 @@ exec /entrypoint supervisord
 
 ## 3 . nginx 配置文件
 ```nginx
-server
-{
+server {
     listen 80;
     server_name _;
 
     root /app/public;
     index index.php index.html;
 
-    #必须放在解析PHP之前
-    #禁止目录执行php SATRT
-    location ~* ^/(manage|storage)/.*\.(php|php5|php7|php8)$ {
+    # -------------------------------------
+    # 禁止目录执行php （放最前才能拦截）
+    # -------------------------------------
+    location ~* ^/(h5|guoqi|static|upload|img)/.*\.(php|php5|php7|php8)$ {
         default_type application/json;
         return 200 '{"message":"You are definitely a particularly bad big fool."}';
     }
-    #禁止目录执行php END
 
-    include /opt/docker/etc/nginx/enable-php.conf;
-
-    location / {
-        if (!-e $request_filename){
-            rewrite  ^(.*)$  /index.php?s=$1  last;   break;
-        }
-    }
-
-    location ~ ^/(\.user.ini|\.htaccess|\.git|\.env|\.svn|\.project|LICENSE|README.md)
-    {
+    # -------------------------------------
+    # 禁止访问隐藏/敏感文件
+    # （放前面才不会被 location / 吃掉）
+    # -------------------------------------
+    location ~ ^/(\.user\.ini|\.htaccess|\.git|\.env|\.svn|\.project|LICENSE|README\.md)$ {
         return 404;
     }
 
-    location ~ \.well-known{
+    # -------------------------------------
+    # .well-known 基础访问
+    # -------------------------------------
+    location ^~ /.well-known {
         allow all;
     }
-    if ( $uri ~ "^/\.well-known/.*\.(php|jsp|py|js|css|lua|ts|go|zip|tar\.gz|rar|7z|sql|bak)$" ) {
+
+    # -------------------------------------
+    # .well-known 禁止执行敏感文件
+    # （if 必须放 server {} 内，不可放 location 下）
+    # -------------------------------------
+    if ($uri ~ "^/\.well-known/.*\.(php|jsp|py|js|css|lua|ts|go|zip|tar\.gz|rar|7z|sql|bak)$") {
         return 403;
     }
-    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
-    {
-        expires      30d;
-        error_log /dev/null;
-        access_log /dev/null;
+
+    # -------------------------------------
+    # 伪静态（必须在 PHP 解析前）
+    # -------------------------------------
+    location / {
+        if (!-e $request_filename) {
+            rewrite ^(.*)$ /index.php?s=$1 last;
+            break;
+        }
     }
 
-    location ~ .*\.(js|css)?$
-    {
-        expires      12h;
-        error_log /dev/null;
-        access_log /dev/null;
+    # -------------------------------------
+    # 静态资源缓存
+    # -------------------------------------
+    location ~* \.(gif|jpg|jpeg|png|bmp|swf)$ {
+        expires 30d;
+        access_log off;
+        error_log off;
     }
-    # 访问日志
+
+    location ~* \.(js|css)$ {
+        expires 12h;
+        access_log off;
+        error_log off;
+    }
+
+    # -------------------------------------
+    # PHP 解析（永远放最后）
+    # -------------------------------------
+    include /opt/docker/etc/nginx/enable-php.conf;
+
+    # 日志
     access_log /docker.stdout;
-    error_log /docker.stderr;
+    error_log  /docker.stderr;
 }
+
 ```
 
 ## 4. php
