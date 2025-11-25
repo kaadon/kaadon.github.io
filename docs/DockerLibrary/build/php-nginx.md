@@ -32,10 +32,13 @@ ENV WEB_DOCUMENT_ROOT=/app/public \
 
 # 设置自定义 entrypoint
 ENTRYPOINT ["/usr/local/bin/project-entrypoint.sh"]
+
+CMD ["/entrypoint","supervisord"]
 ```
 
 ## 2 . entrypoint
 ```shell
+#!/bin/sh
 #!/bin/sh
 set -e
 
@@ -44,9 +47,11 @@ echo "Setting up directory permissions...🚀🚀🚀"
 [ ! -d /app/public/upload ] && mkdir -p /app/public/upload
 chown -R application:application /app/runtime /app/public/upload
 chmod -R 755 /app/runtime /app/public/upload
-echo "Directory permissions set.✅✅✅\n"
+# shellcheck disable=SC2028
+echo "Directory permissions set. ✅✅✅\n"
 
-exec /entrypoint
+exec "$@"
+
 ```
 
 ## 3 . nginx 配置文件
