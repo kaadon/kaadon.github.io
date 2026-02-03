@@ -1,0 +1,42 @@
+"index.md":
+    text: "首页"
+    path: false
+"markdown-examples.md":
+    text: "markdown-examples"
+    path: false
+    isShow: false
+"api-examples.md":
+    text: "api-examples"
+    path: false
+    isShow: false
+Developer:
+    text: "常用开发笔记"
+    path: true
+CommonCodeFragment:
+    text: "常用代码片段"
+    path: true
+api:
+    text: "API接口"
+    path: true
+CommonToolConfiguration:
+    text: "常用工具配置"
+    path: true
+ComposerLibrary:
+    text: "Composer库"
+    path: true
+LanguageLearning:
+    text: "语言学习"
+    path: true
+other:
+    text: "其他工具"
+    path: true
+tools:
+    text: "开发工具"
+    path: true
+NpmLibrary:
+    text: "NPM库"
+    path: true
+DockerLibrary:
+    text: "常用Docker部署"
+    path: true
+

@@ -1,0 +1,24 @@
+"elasticsearch":
+    text: "elasticsearch常用配置"
+    path: true
+"mysql":
+    text: "mysql常用配置"
+    path: true
+"nfs":
+    text: "nfs常用配置"
+    path: true
+"nginx":
+    text: "nginx常用配置"
+    path: true
+"node":
+    text: "node常用配置"
+    path: true
+"php":
+    text: "php常用配置"
+    path: true
+"git":
+    text: "git常用配置"
+    path: true
+"shell":
+    text: "shell代码段"
+    path: true

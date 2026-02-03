@@ -1,0 +1,12 @@
+"git.md":
+    text: "git常用命令"
+    path: false
+"gitea.md":
+    text: "gitea常用配置"
+    path: false
+"github.md":
+    text: "github常用配置"
+    path: false
+"code.md":
+    text: "代码部署"
+    path: false

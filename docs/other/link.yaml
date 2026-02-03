@@ -1,0 +1,24 @@
+cdn:
+    text: "CDN"
+    path: true
+frame:
+    text: "Frame"
+    path: true
+google:
+    text: "Google"
+    path: true
+ssl:
+    text: "SSL"
+    path: true
+linux:
+    text: "Linux常用配置"
+    path: true
+tools:
+    text: "常用工具"
+    path: true
+mac:
+    text: "mac常用配置"
+    path: true
+virus:
+    text: "病毒记录"
+    path: true

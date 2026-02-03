@@ -1,0 +1,6 @@
+build:
+    text: build示例
+    path: true
+compose:
+    text: 线上部署示例
+    path: true
