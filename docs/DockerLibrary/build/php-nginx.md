@@ -437,4 +437,80 @@ docker compose -f docker-dev.yml up -d --no-deps --pull always eazyadmin
     }
 ```
 
+## 13 . 环境变量
+### 13.1 开发环境 权限配置(mac)
+```docker
+      - APPLICATION_UID=501
+      - APPLICATION_GID=20
+```
+### 13.2 时区配置
+```docker
+      - PHP_DATE_TIMEZONE=Asia/Shanghai
+```
+### 13.2 php 配置环境变量
+
+#### 13.2.1 php 1h2g 配置环境变量说明
+```docker
+      - FPM_PM_MAX_CHILDREN=12
+      - FPM_PM_START_SERVERS=3
+      - FPM_PM_MIN_SPARE_SERVERS=2
+      - FPM_PM_MAX_SPARE_SERVERS=5
+      - FPM_MAX_REQUESTS=1000
+```
+
+#### 13.2.2 php 2h4g 配置环境变量说明
+```docker
+      - FPM_PM_MAX_CHILDREN=30
+      - FPM_PM_START_SERVERS=6
+      - FPM_PM_MIN_SPARE_SERVERS=3
+      - FPM_PM_MAX_SPARE_SERVERS=9
+      - FPM_MAX_REQUESTS=1000
+```
+#### 13.2.3 php 3h6g 配置环境变量说明
+```docker
+      - FPM_PM_MAX_CHILDREN=45
+      - FPM_PM_START_SERVERS=9
+      - FPM_PM_MIN_SPARE_SERVERS=5
+      - FPM_PM_MAX_SPARE_SERVERS=14
+      - FPM_MAX_REQUESTS=1000
+```
+
+#### 13.2.4 php 4h8g 配置环境变量
+```docker
+      - FPM_PM_MAX_CHILDREN=60
+      - FPM_PM_START_SERVERS=12
+      - FPM_PM_MIN_SPARE_SERVERS=6
+      - FPM_PM_MAX_SPARE_SERVERS=18
+      - FPM_MAX_REQUESTS=1000
+```
+
+#### 13.2.5 php 6h12g 配置环境变量说明
+```docker
+      - FPM_PM_MAX_CHILDREN=80
+      - FPM_PM_START_SERVERS=16
+      - FPM_PM_MIN_SPARE_SERVERS=8
+      - FPM_PM_MAX_SPARE_SERVERS=24
+      - FPM_MAX_REQUESTS=2000
+```
+
+#### 13.2.6 php 8h16g 配置环境变量说明
+```docker
+      - FPM_PM_MAX_CHILDREN=120
+      - FPM_PM_START_SERVERS=24
+      - FPM_PM_MIN_SPARE_SERVERS=12
+      - FPM_PM_MAX_SPARE_SERVERS=36
+      - FPM_MAX_REQUESTS=1000
+```
+
+#### 13.2.7 php 16h32g 配置环境变量说明
+```docker
+      - FPM_PM_MAX_CHILDREN=240
+      - FPM_PM_START_SERVERS=48
+      - FPM_PM_MIN_SPARE_SERVERS=24
+      - FPM_PM_MAX_SPARE_SERVERS=72
+      - FPM_MAX_REQUESTS=1000
+```
+
+
+
 

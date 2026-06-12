@@ -22,4 +22,9 @@
     text: "clickhouse 部署"
     path: false
 
+"minIo.md":
+    text: "MinIO 部署"
+    path: false
+
+
 
