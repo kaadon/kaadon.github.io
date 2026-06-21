@@ -1,6 +1,9 @@
 "git.md":
     text: "git常用命令"
     path: false
+"script.md":
+    text: "gitea常用脚本"
+    path: false
 "gitea.md":
     text: "gitea常用配置"
     path: false
