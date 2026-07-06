@@ -26,5 +26,9 @@
     text: "MinIO 部署"
     path: false
 
+"nats.md":
+    text: "NATS 部署"
+    path: false
+
 
 
