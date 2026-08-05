@@ -17,7 +17,7 @@
 ```yaml
 services:
   clickhouse:
-    image: clickhouse/clickhouse-server:latest
+    image: clickhouse/clickhouse-server:26.2.19
     container_name: clickhouse
     restart: always
     ports:

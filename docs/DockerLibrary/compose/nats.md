@@ -20,7 +20,7 @@
 ```yaml
 services:
   nats1:
-    image: nats:latest
+    image: nats:2.14.4
     container_name: nats1
     command:
       - "--name=nats1"
@@ -38,7 +38,7 @@ services:
     volumes:
       - /www/docker/nats-clickhouse/nats/nats1:/data
       - /www/docker/nats-clickhouse/nats/nats-auth.conf:/etc/nats/auth.conf:ro
-    # 注意: nats:latest 为 scratch 极简镜像，内部无 wget/curl/sh，
+    # 注意: nats:2.14.4 为 scratch 极简镜像，内部无 wget/curl/sh，
     # 无法在容器内执行 HTTP healthcheck，故不设 healthcheck，
     # 依赖关系改用 service_started（DNS 可解析即可，集群路由自带重连）
     restart: always
@@ -46,7 +46,7 @@ services:
       - docker
 
   nats2:
-    image: nats:latest
+    image: nats:2.14.4
     container_name: nats2
     # 等种子节点 nats1 启动后再启动，确保 Docker DNS 已能解析 nats1，
     # 避免路由建立时 "lookup nats1 ... server misbehaving" 及 leader 抖动
@@ -71,7 +71,7 @@ services:
       - docker
 
   nats3:
-    image: nats:latest
+    image: nats:2.14.4
     container_name: nats3
     # 依次等 nats1、nats2 启动，形成 1 -> 2 -> 3 有序启动，路由一次建立成功
     depends_on:
